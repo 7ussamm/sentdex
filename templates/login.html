@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button class='btn' type="submit">Submit</button>
+    </form>
+
+    if you don't have an account, <a href="{% url 'main:register' %}" style="font-weight:bold">Register</a> instead.
+{% endblock %}
+

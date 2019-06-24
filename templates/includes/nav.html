@@ -1,0 +1,17 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo" style="padding-left:2%">Tutorials!!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          {% if user.is_authenticated %}
+            <li style="margin-left: -35%;"><a href="#">{{ user.username.capitalize }} </a></li>
+            <li style="margin-right: 32%;"><a href="{% url 'main:logout' %}">Logout</a></li>
+          {% else %}
+            <li style="margin-left: -35%;"><a href="{% url 'main:register' %}">Register</a><li>
+            <li style="margin-right: 32%;"><a href="{% url 'main:login' %}">Login</a><li>
+          {% endif %}
+
+          <li><a href="http://127.0.0.1:8000/admin/">Admin</a></li>
+      </ul>
+    </div>
+</nav>
